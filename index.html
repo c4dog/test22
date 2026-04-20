@@ -52,6 +52,8 @@
         .result-card h3 { margin: 0 0 12px 0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-sub); }
 
         /* 고정형 돋보기 */
+        /* 만들면서 새콤달콤 키위맛 먹어봤는데 맛있더라고요. 님들도 드셔보셈 */
+        
         #fixed-magnifier-box {
             width: 100%; height: 180px; background: #000; border-radius: 12px;
             margin-bottom: 16px; overflow: hidden; position: relative;
@@ -157,7 +159,7 @@ const inputs = {
     h: document.getElementById('in-h'), s: document.getElementById('in-s'), v: document.getElementById('in-v')
 };
 
-// --- [보완] 브라우저 기본 동작 차단 (무한 드래그 대응) ---
+// --- [보완] 브라우저 기본 동작 차단 (무한 드래그 대응) --- // 그냥 ai쓰는게 맞다. 캠프 왜 갔다왔을까 시간이 아깝다
 window.addEventListener("dragover", e => e.preventDefault(), false);
 window.addEventListener("drop", e => e.preventDefault(), false);
 
@@ -179,7 +181,7 @@ container.addEventListener('drop', e => {
     handleFile(e.dataTransfer.files[0]);
 }, false);
 
-// --- [보완] Ctrl+V 붙여넣기 강화 로직 ---
+// --- [보완] Ctrl+V 붙여넣기 강화 로직 --- 스스로 해볼려 했거든요? 그냥 ai 딸깍이 맞는거같음
 window.addEventListener('paste', e => {
     const items = (e.clipboardData || e.originalEvent.clipboardData).items;
     for (let i = 0; i < items.length; i++) {
@@ -251,7 +253,7 @@ function updateUI(r, g, b, h, s, v, origin) {
 // --- 마우스 핸들링 (고정형 돋보기) ---
 container.onmousemove = e => {
     const rect = canvas.getBoundingClientRect();
-    // 스크롤된 위치까지 고려한 정확한 좌표 계산
+    // 스크롤된 위치까지 고려한 정확한 좌표 계산 이런 시이이이이이바아아아아아아아알 김규성1루 쓰지말라고
     const x = (e.clientX - rect.left + container.scrollLeft) * (canvas.width / rect.width);
     const y = (e.clientY - rect.top + container.scrollTop) * (canvas.height / rect.height);
     
